@@ -124,7 +124,8 @@ async def process_request(files: UploadFile = File(...)):
                 raise HTTPException(status_code=400, detail="ZIP must contain exactly one CSV file.")
             
             # Extract the CSV file to a temporary directory
-            extracted_dir = "extracted_files"
+            extracted_dir = "/tmp/extracted_files"
+
             os.makedirs(extracted_dir, exist_ok=True)
             zip_ref.extract(file_names[0], path=extracted_dir)
 

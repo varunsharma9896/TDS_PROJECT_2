@@ -15,12 +15,12 @@ dotenv.load_dotenv()
 app = FastAPI()
 
 
-'''
+
 @app.get("/")
 async def root():
     """Root endpoint to verify the server is running."""
     return {"message": "Hello, World!"}
-'''
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
